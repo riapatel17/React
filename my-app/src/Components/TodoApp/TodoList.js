@@ -42,7 +42,7 @@ function TodoList() {
 
   return (
     <div>
-      <h2>Todo App</h2>
+      <h1>Todo App</h1>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todos}
