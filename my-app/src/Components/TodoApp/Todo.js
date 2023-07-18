@@ -40,6 +40,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
           className='delete-icon'
         />
       </div>
+
     </div>
   ));
 };

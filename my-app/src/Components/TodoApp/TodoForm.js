@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
-
   const inputRef = useRef(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
     inputRef.current.focus();
   });
@@ -15,6 +15,8 @@ function TodoForm(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
+
+    props.edit ? alert('Task is Updated') : alert('Task Added');
 
     props.onSubmit({
       id: Math.floor(Math.random() * 10000),
@@ -52,6 +54,12 @@ function TodoForm(props) {
           <button onClick={handleSubmit} className='todo-button'>
             Add
           </button>
+
+          <div>
+            <button onClick={() => navigate('todo-list')} className='click'>
+              Click here to see Todo List
+            </button>
+          </div>
         </div>
       )}
     </form>

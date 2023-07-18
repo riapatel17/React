@@ -1,15 +1,15 @@
 import './App.css';
-// import Counter from './Components/Counter';
-// import CounterApp from "./Components/CounterApp";
+import { Route, Routes } from 'react-router-dom';
+// import TodoForm from './Components/TodoApp/TodoForm';
 import TodoList from './Components/TodoApp/TodoList';
+
 
 function App() {
   return (
-    <div className="App">
-      {/* <CounterApp /> */}
-      {/* <Counter /> */}
-      <TodoList />
-    </div>
+    <Routes>
+      <Route path='/' element={<TodoList />}></Route>
+      {/* <Route path='todo-list' element={<TodoList />}></Route> */}
+    </Routes>
   );
 }
 export default App;
