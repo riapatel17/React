@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function TodoForm(props) {
-  const [input, setInput] = useState(props.edit ? props.edit.value : '');
+function TodoForm({ edit, onSubmit }) {
+  const [input, setInput] = useState(edit ? edit.value : '');
+  const [message, setMessage] = useState('');
+
   const inputRef = useRef(null);
   const navigate = useNavigate();
   useEffect(() => {
@@ -15,10 +17,14 @@ function TodoForm(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
-
-    props.edit ? alert('Task is Updated') : alert('Task Added');
-
-    props.onSubmit({
+    if (!input) {
+      setMessage('Please enter task.');
+      setTimeout(() => setMessage(''), 2000);
+      return;
+    };
+    setMessage(edit ? 'Task is Updated' : 'Task Added');
+    setTimeout(() => setMessage(''), 2000);
+    onSubmit({
       id: Math.floor(Math.random() * 10000),
       text: input
     });
@@ -27,7 +33,7 @@ function TodoForm(props) {
 
   return (
     <form onSubmit={handleSubmit} className='todo-form'>
-      {props.edit ? (
+      {edit ? (
         <div>
           <input
             placeholder='Update'
@@ -54,9 +60,11 @@ function TodoForm(props) {
           <button onClick={handleSubmit} className='todo-button'>
             Add
           </button>
-
           <div>
-            <button onClick={() => navigate('todo-list')} className='click'>
+            {!!message && <span>{message}</span>}
+          </div>
+          <div>
+            <button onClick={() => navigate('/todo-list')} className='click'>
               Click here to see Todo List
             </button>
           </div>
