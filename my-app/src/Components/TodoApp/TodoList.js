@@ -13,7 +13,7 @@ function TodoList() {
   };
 
   return (
-    <div>
+    <div className='listing'>
       <h1>Todo App</h1>
       <TodoForm onSubmit={addTodo} />
     </div>

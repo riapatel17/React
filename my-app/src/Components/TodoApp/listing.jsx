@@ -31,8 +31,8 @@ const Listing = () => {
   };
 
   return (
-    <div>
-      <h1>Today's todos</h1>
+    <div className='listing'>
+      <h1>Today's Todos</h1>
       <Todo
         todos={todos}
         completeTodo={completeTodo}
@@ -40,7 +40,7 @@ const Listing = () => {
         removeTodo={removeTodo}
       />
       <button onClick={() => navigate('/')} className='click'>
-        Back
+        Go Back
       </button>
     </div>
   )
