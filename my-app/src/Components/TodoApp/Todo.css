@@ -1,12 +1,7 @@
-/* body {
-  background-color: #161a2b;
-} */
-
 .todo-app {
   display: flex;
   flex-direction: column;
   width: 520px;
-  /* min-height: 600px; */
   background: #161a2b;
   text-align: center;
   margin: 128px auto;
@@ -18,7 +13,6 @@ h1 {
   margin: 32px 0;
   font-size: 28px;
   text-align: center;
-  /* color: #fff; */
 }
 
 .complete {
@@ -40,7 +34,6 @@ h1 {
   margin-right: 2px;
   font-size: 16px;
   margin-left: 60px;
-  /* color: #fff; */
 }
 
 .todo-input::placeholder {
@@ -85,7 +78,6 @@ h1 {
   padding: 10px;
   border-radius: 4px;
   width: 29%;
-  /* color: #fff;  */
   border: 2px solid #149fff;
 }
 
