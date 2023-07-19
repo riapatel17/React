@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import TodoForm from './TodoForm';
 import './Todo.css'
+import { context } from '../../Context';
 
-function TodoList({ todos, setTodos }) {
+function TodoList() {
+
+  const { todos, setTodos } = useContext(context)
+
   const addTodo = todo => {
     const newTodos = [...todos, todo];
     setTodos(newTodos);

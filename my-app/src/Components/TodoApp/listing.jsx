@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Todo from './Todo';
 import { useNavigate } from 'react-router-dom';
+import { context } from '../../Context';
 
-const Listing = ({ todos, setTodos }) => {
+const Listing = () => {
+  const { todos, setTodos } = useContext(context)
   const navigate = useNavigate();
   const updateTodo = (todoId, newValue) => {
     if (!newValue.text || newValue.text.trim() === '') {
