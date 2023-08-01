@@ -54,7 +54,7 @@ function FetchApi() {
 
 	return (
 		<div>
-			<h3>API Practice</h3>
+			<h2>API Practice</h2>
 			<button onClick={getApi}>Fetch API</button><br />
 			<div>
 				<ul>
